@@ -24,6 +24,7 @@
                 <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                         <li><a href="{% url 'blog-about' %}">About Us</a></li>
                         <li><a href="{% url 'blog-home' %}">Contact</a></li>
@@ -39,7 +40,8 @@
     </div>    
 
     <ul class="sidenav" id="mobile-links">
-        {% if user.is_authenticade %}
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
             <li><a href="{% url 'blog-about' %}">About Us</a></li>
             <li><a href="{% url 'blog-home' %}">Contact</a></li>
