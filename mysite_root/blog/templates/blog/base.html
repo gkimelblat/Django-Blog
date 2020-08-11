@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialize CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    {% if title %}
+        <title>Gabriel's Blog - {{ title }}</title>
+        {% else %}
+        <title>Gabriel's Blog</title>
+    {% endif %}   
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="nav-wrapper blue-grey darken-1 z-depth-3">
+            <div class="container">
+                <a href="{% url 'blog-home' %}" class="brand-logo"><i class="material-icons">star</i>Gabriel's Django</a>
+                <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="{% url 'blog-about' %}">About Us</a></li>
+                        <li><a href="{% url 'blog-home' %}">Contact</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'blog-about' %}">About Us</a></li>
+                        <li><a href="{% url 'blog-home' %}">Contact</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>    
+
+    <ul class="sidenav" id="mobile-links">
+        {% if user.is_authenticade %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'blog-about' %}">About Us</a></li>
+            <li><a href="{% url 'blog-home' %}">Contact</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'blog-about' %}">About Us</a></li>
+            <li><a href="{% url 'blog-home' %}">Contact</a></li>
+        {% endif %}
+    </ul>
+    
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="materialert success">
+                    <div class="material-icons">check</div>
+                    {{ message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+    
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+            });
+    </script>
+</body>
+</html>
