@@ -6,10 +6,10 @@
               <div class="card blue-grey darken-1 z-depth-2">                
                 <div class="card-content white-text">
                   <img class="col s2 m2 l1 xl1" src="{{ post.author.profile.image.url }}" alt="profile picture">
-                  <span class="card-title">{{  post.title }}</span>
+                  <span class="card-title"> <a href="{% url 'post-detail' post.id %}">{{  post.title }}</a></span>
                   <p class="flow-text">{{ post.content }}</p>
                   <br>
-                  <p>By {{ post.author }} on {{ post.date_posted|date:'F d, Y' }}</pass=>
+                  <p>By {{ post.author }} on {{ post.date_posted|date:'F d, Y' }}</p>
                 </div>
                 <div class="card-action">
                   <a href="{% url 'blog-home' %}" class="btn-small waves-effect waves-light">

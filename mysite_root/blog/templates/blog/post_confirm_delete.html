@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <h5 class="center">Are you ready to send this post "{{ object.title }}" to the Eternal Void?</h5>
+                <br>
+                <div class="form-group center">
+                    <button class="btn red darken-4" type="submit">Delete!</button>
+                    <a class="btn red darken-4" href="{% url 'post-detail' object.id %}" type="submit">Nevermind...</a>
+                </div>
+            </fieldset>            
+        </form>
+    </div>
+{% endblock content %}
