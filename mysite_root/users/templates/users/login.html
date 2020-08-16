@@ -12,10 +12,13 @@
                 <button class="btn" type="submit">Login</button>
             </div>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Not registered yet? <a href="{% url 'register' %}" class="ml-2">Sign Up Here!</a>
-            </small>
+        <br>
+        <div>
+            Not registered yet? <a href="{% url 'register' %}">Sign Up Here!</a>
+        </div>
+        <br>
+        <div>
+            Forgot your Password? <a href="{% url 'password_reset' %}">Click here to reset your Password!</a>
         </div>
     </div>
 {% endblock content %}

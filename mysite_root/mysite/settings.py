@@ -130,3 +130,12 @@ CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587 # Less likely to be rejected: https://serversmtp.com/port-587/
+EMAIL_USE_TLS = True
+
+# original authentication data must be stored on .bash_profile.
+EMAIL_HOST_USER = os.environ.get('DB_USER') 
+EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
