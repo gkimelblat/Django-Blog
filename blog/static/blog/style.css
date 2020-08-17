@@ -5,7 +5,7 @@ html {
 
 nav .brand-title {
     position: relative;
-    text-align: left;
+    text-align: start;
   }
 
 .materialert{
