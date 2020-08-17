@@ -20,7 +20,7 @@
     <div class="navbar-fixed">
         <nav class="nav-wrapper blue-grey darken-1 z-depth-3">
             <div class="container">
-                <h2 href="{% url 'blog-home' %}" class="brand-logo"><i class="material-icons">star</i>Gabriel's Django</h2>
+                <a href="{% url 'blog-home' %}" class="brand-logo flow-text"><i class="material-icons">star</i>Gabriel's Django</a>
                 <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
