@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 #SECRET_KEY = '7x1!vb4nl6!a(2n$+x^(i8=d3q5l56vndco#0d)0w+_!k@_$u-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['ghermanblog.herokuapp.com']
 
