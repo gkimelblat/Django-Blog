@@ -21,8 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-#SECRET_KEY = '7x1!vb4nl6!a(2n$+x^(i8=d3q5l56vndco#0d)0w+_!k@_$u-'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -74,7 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -141,10 +139,6 @@ EMAIL_USE_TLS = True
 
 
 # Documentation: https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
