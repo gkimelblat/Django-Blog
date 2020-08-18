@@ -59,7 +59,7 @@ cover/
 *.log
 db.sqlite3
 db.sqlite3-journal
-*.local_settings.py
+mysite/local_settings.py
 
 # Flask stuff:
 instance/
