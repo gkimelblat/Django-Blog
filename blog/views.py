@@ -12,6 +12,7 @@ from django.views.generic import (
     DeleteView,
 )
 from .models import Post
+from .api_interactions import a_b
 
 def home(request):
     context = {
@@ -76,5 +77,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
         
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    joke = a_b()
+    return render(request, 'blog/about.html', {'title': 'About', 'joke': joke})
+
 
