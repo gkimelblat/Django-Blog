@@ -78,6 +78,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         
 def about(request):
     joke = a_b()
+    print(joke)
     return render(request, 'blog/about.html', {'title': 'About', 'joke': joke})
-
-
