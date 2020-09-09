@@ -18,9 +18,9 @@
 
 <body>
     <div class="navbar-fixed">
-        <nav class="nav-wrapper blue-grey darken-1 z-depth-3">
-            <div class="container">
-                <a href="{% url 'blog-home' %}" class="brand-logo"><i class="material-icons">star</i>Gabriel's Django</a>
+        <div class="container"></div>
+            <nav class="nav-wrapper blue-grey darken-1 z-depth-3">
+                <a href="{% url 'blog-home' %}" class="brand-logo"><i class="material-icons">star</i>Blog</a>
                 <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
@@ -34,8 +34,8 @@
                         <li><a href="{% url 'blog-about' %}">Jokes</a></li>
                     {% endif %}
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </div>    
 
     <ul class="sidenav" id="mobile-links">
